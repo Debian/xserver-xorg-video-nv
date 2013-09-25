@@ -6,6 +6,7 @@ xserver-xorg-video-nv (1:2.1.20-2) UNRELEASED; urgency=low
 
   [ Robert Millan ]
   * Remove confusing note about nvidia blob.
+  * Update VCS URLs to their new location.
 
  -- Robert Millan <rmh@debian.org>  Wed, 25 Sep 2013 13:04:06 +0200
 
