@@ -4,6 +4,9 @@ xserver-xorg-video-nv (1:2.1.20-2) UNRELEASED; urgency=low
   * Cherry-pick FreeBSD build fixes from upstream git.
     (Closes: #724325)
 
+  [ Robert Millan ]
+  * Remove confusing note about nvidia blob.
+
  -- Robert Millan <rmh@debian.org>  Wed, 25 Sep 2013 13:04:06 +0200
 
 xserver-xorg-video-nv (1:2.1.20-1) unstable; urgency=low

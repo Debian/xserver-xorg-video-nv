@@ -34,9 +34,6 @@ Description: X.Org X server -- NV display driver
  This driver for the X.Org X server (see xserver-xorg for a further description)
  provides support for NVIDIA Riva, TNT, GeForce, and Quadro cards.
  .
- Note that this is not the same as the binary-only 'nvidia' driver, which
- adds 3D support, but is binary-only and not supported.
- .
  More information about X.Org can be found at:
  <URL:http://www.X.org>
  .
