@@ -1,0 +1,77 @@
+--- a/src/g80_driver.c
++++ b/src/g80_driver.c
+@@ -34,7 +34,6 @@
+ #include <xf86Resources.h>
+ #endif
+ #include <mipointer.h>
+-#include <mibstore.h>
+ #include <micmap.h>
+ #include <xf86cmap.h>
+ #include <fb.h>
+@@ -833,7 +832,6 @@
+         }
+     }
+ 
+-    miInitializeBackingStore(pScreen);
+     xf86SetBackingStore(pScreen);
+     xf86SetSilkenMouse(pScreen);
+ 
+--- a/src/nv_driver.c
++++ b/src/nv_driver.c
+@@ -2550,7 +2550,6 @@
+     if (!pNv->NoAccel)
+ 	NVAccelInit(pScreen);
+     
+-    miInitializeBackingStore(pScreen);
+     xf86SetBackingStore(pScreen);
+     xf86SetSilkenMouse(pScreen);
+ 
+--- a/src/nv_include.h
++++ b/src/nv_include.h
+@@ -24,12 +24,10 @@
+ /* All drivers initialising the SW cursor need this */
+ #include "mipointer.h"
+ 
+-/* All drivers implementing backing store need this */
+-#include "mibstore.h"
+-
+ #include "micmap.h"
+ 
+ #include "xf86DDC.h"
++#include "xf86Modes.h"
+ 
+ #include "vbe.h"
+ 
+--- a/src/nv_setup.c
++++ b/src/nv_setup.c
+@@ -491,6 +491,8 @@
+ 
+     pNv->Television = FALSE;
+ 
++    vgaHWGetIOBase(pVga);
++
+     if(!pNv->twoHeads) {
+        pNv->CRTCnumber = 0;
+        if((monitorA = NVProbeDDC(pScrn, 0))) {
+--- a/src/riva_driver.c
++++ b/src/riva_driver.c
+@@ -1168,7 +1168,6 @@
+     if (!pRiva->NoAccel)
+ 	RivaAccelInit(pScreen);
+     
+-    miInitializeBackingStore(pScreen);
+     xf86SetBackingStore(pScreen);
+     xf86SetSilkenMouse(pScreen);
+ 
+--- a/src/riva_include.h
++++ b/src/riva_include.h
+@@ -22,9 +22,6 @@
+ /* All drivers initialising the SW cursor need this */
+ #include "mipointer.h"
+ 
+-/* All drivers implementing backing store need this */
+-#include "mibstore.h"
+-
+ #include "micmap.h"
+ 
+ #include "xf86DDC.h"
