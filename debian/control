@@ -1,0 +1,43 @@
+Source: xserver-xorg-video-nv
+Section: non-free/x11
+Priority: optional
+Maintainer: GNU/kFreeBSD Maintainers <debian-bsd@lists.debian.org>
+Uploaders: Robert Millan <rmh@debian.org>
+Build-Depends:
+ debhelper (>= 5.0.0),
+ pkg-config,
+ xserver-xorg-dev (>= 2:1.7.6.901),
+ x11proto-video-dev,
+ x11proto-core-dev,
+ x11proto-fonts-dev,
+ x11proto-randr-dev (>= 1.2),
+ x11proto-render-dev,
+ x11proto-xext-dev,
+ dpkg-dev (>= 1.14.17),
+ automake,
+ libtool,
+ xutils-dev,
+ libdrm-dev (>= 2.4.3) [!hurd-i386],
+ x11proto-xf86dri-dev,
+ quilt,
+Standards-Version: 3.8.4
+Vcs-Git: git://git.debian.org/git/pkg-xorg/driver/xserver-xorg-video-nv
+Vcs-Browser: http://git.debian.org/?p=pkg-xorg/driver/xserver-xorg-video-nv.git
+
+Package: xserver-xorg-video-nv
+Architecture: kfreebsd-any hurd-any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${xviddriver:Depends}
+Provides: ${xviddriver:Provides}, xf86-video-driver-riva128
+Conflicts: xserver-xorg-video-riva128, xserver-xorg-driver-nv
+Replaces: xserver-xorg (<< 6.8.2-35), xserver-xorg-video-riva128, xserver-xorg-driver-nv
+Description: X.Org X server -- NV display driver
+ This driver for the X.Org X server (see xserver-xorg for a further description)
+ provides support for NVIDIA Riva, TNT, GeForce, and Quadro cards.
+ .
+ Note that this is not the same as the binary-only 'nvidia' driver, which
+ adds 3D support, but is binary-only and not supported.
+ .
+ More information about X.Org can be found at:
+ <URL:http://www.X.org>
+ .
+ This package is built from the X.org xf86-video-nv driver module.

@@ -1,0 +1,17 @@
+From: Julien Cristau <jcristau@debian.org>
+Subject: Link against the libs we use
+
+Avoids undefined references, ensures correct package dependencies.
+
+Index: xserver-xorg-video-nv/src/Makefile.am
+===================================================================
+--- xserver-xorg-video-nv.orig/src/Makefile.am
++++ xserver-xorg-video-nv/src/Makefile.am
+@@ -27,6 +27,7 @@
+ nv_drv_la_LTLIBRARIES = nv_drv.la
+ nv_drv_la_LDFLAGS = -module -avoid-version
+ nv_drv_ladir = @moduledir@/drivers
++nv_drv_la_LIBADD = $(PCIACCESS_LIBS) $(LIBDRM_LIBS) -lm
+ 
+ nv_drv_la_SOURCES = $(nv_sources) $(riva_sources) $(g80_sources)
+ 
