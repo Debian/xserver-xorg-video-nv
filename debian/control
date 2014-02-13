@@ -23,6 +23,7 @@ Build-Depends:
 Standards-Version: 3.8.4
 Vcs-Svn: svn://anonscm.debian.org/glibc-bsd/trunk/xserver-xorg-video-nv/
 Vcs-Browser: http://anonscm.debian.org/viewvc/glibc-bsd/trunk/xserver-xorg-video-nv/
+XS-Autobuild: yes
 
 Package: xserver-xorg-video-nv
 Architecture: kfreebsd-any hurd-any
