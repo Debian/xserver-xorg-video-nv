@@ -21,8 +21,8 @@ Build-Depends:
  x11proto-xf86dri-dev,
  quilt,
 Standards-Version: 3.8.4
-Vcs-Svn: svn://anonscm.debian.org/glibc-bsd/trunk/xserver-xorg-video-nv/
-Vcs-Browser: http://anonscm.debian.org/viewvc/glibc-bsd/trunk/xserver-xorg-video-nv/
+Vcs-Browser: https://salsa.debian.org/kfreebsd-team/xserver-xorg-video-nv
+Vcs-Git: https://salsa.debian.org/kfreebsd-team/xserver-xorg-video-nv.git
 XS-Autobuild: yes
 
 Package: xserver-xorg-video-nv
